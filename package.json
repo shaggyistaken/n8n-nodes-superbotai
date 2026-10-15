@@ -1,0 +1,58 @@
+{
+  "name": "n8n-nodes-superbot",
+  "version": "0.1.0",
+  "description": "n8n nodes for SuperBot AI: trigger on new leads, conversations and escalations; create leads, add AI training answers, get recent leads and conversations.",
+  "license": "MIT",
+  "homepage": "https://superbotapp.ai/docs/zapier#other-tools",
+  "keywords": [
+    "n8n-community-node-package",
+    "superbot",
+    "chatbot",
+    "ai",
+    "customer support",
+    "leads"
+  ],
+  "author": {
+    "name": "SuperBot AI",
+    "email": "support@superbotapp.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaggyistaken/n8n-nodes-superbot.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/SuperBotApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/SuperBot/SuperBot.node.js",
+      "dist/nodes/SuperBotTrigger/SuperBotTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.52.3",
+    "eslint": "9.32.0",
+    "n8n-workflow": "^2.16.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
