@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-superbot.superBotTrigger",
+	"node": "n8n-nodes-superbotai.superBotTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "Sales"],

@@ -1,4 +1,4 @@
-# n8n-nodes-superbot
+# n8n-nodes-superbotai
 
 n8n community nodes for [SuperBot AI](https://superbotapp.ai), the AI chatbot for websites and stores.
 
@@ -34,25 +34,25 @@ npm run dev       # runs a local n8n with this package linked (http://localhost:
 
 npm publishing needs the owner's npm login, so these steps are manual.
 
-1. Create a public GitHub repo for the package (n8n verification requires a public repo that matches `repository.url` in package.json, currently `https://github.com/shaggyistaken/n8n-nodes-superbot`), and push the contents of this folder to it:
+1. Create a public GitHub repo for the package (n8n verification requires a public repo that matches `repository.url` in package.json, currently `https://github.com/shaggyistaken/n8n-nodes-superbotai`), and push the contents of this folder to it:
    ```bash
    cd superbot-n8n
-   git init && git add . && git commit -m "n8n-nodes-superbot 0.1.0"
-   gh repo create shaggyistaken/n8n-nodes-superbot --public --source . --push
+   git init && git add . && git commit -m "n8n-nodes-superbotai 0.1.0"
+   gh repo create shaggyistaken/n8n-nodes-superbotai --public --source . --push
    ```
 2. `npm login` (owner account).
 3. Publish with provenance (n8n only verifies packages published from GitHub Actions with an npm provenance statement since May 1 2026). The workflow is already in `.github/workflows/publish.yml` (copied from n8n-nodes-starter); it runs on a pushed version tag like `0.1.0`.
-   - One-time: the first version must exist on npm before a trusted publisher can be added, so either publish 0.1.0 once with a Granular Access Token stored as the repo secret `NPM_TOKEN`, or (preferred, if npm allows it for a new package name) on npmjs.com open the package settings → **Publish access → Trusted Publishers** → GitHub Actions, owner `shaggyistaken`, repo `n8n-nodes-superbot`, workflow `publish.yml`.
+   - One-time: the first version must exist on npm before a trusted publisher can be added, so either publish 0.1.0 once with a Granular Access Token stored as the repo secret `NPM_TOKEN`, or (preferred, if npm allows it for a new package name) on npmjs.com open the package settings → **Publish access → Trusted Publishers** → GitHub Actions, owner `shaggyistaken`, repo `n8n-nodes-superbotai`, workflow `publish.yml`.
    - Then run `npm run release` locally: it lints, builds, bumps the version, commits, tags and pushes, and the workflow publishes.
-4. Check the published package with n8n's scanner: `npx @n8n/scan-community-package n8n-nodes-superbot`.
-5. Test install: in any self-hosted n8n, **Settings → Community nodes → Install** → `n8n-nodes-superbot`. Activate a workflow with the SuperBot Trigger and confirm a test lead arrives.
+4. Check the published package with n8n's scanner: `npx @n8n/scan-community-package n8n-nodes-superbotai`.
+5. Test install: in any self-hosted n8n, **Settings → Community nodes → Install** → `n8n-nodes-superbotai`. Activate a workflow with the SuperBot Trigger and confirm a test lead arrives.
 
 ## n8n verified-node submission (owner only)
 
 Verified nodes appear in the n8n nodes panel for every user, including n8n Cloud.
 
 1. Make sure the package meets n8n's verification guidelines: built with `@n8n/node-cli` (it is), `n8n-community-node-package` keyword, no runtime dependencies, MIT license, English UI text, README with credential setup, passes `npm run lint` and the scanner above, published with provenance. n8n may reject nodes that compete with its paid features; SuperBot does not.
-2. Sign in to the **n8n Creator Portal** at https://creators.n8n.io/nodes and submit the node: package name `n8n-nodes-superbot`, the GitHub repo URL, and a test API key for the reviewers (create a dedicated key in a test workspace, never a production key, and paste it only into the portal form).
+2. Sign in to the **n8n Creator Portal** at https://creators.n8n.io/nodes and submit the node: package name `n8n-nodes-superbotai`, the GitHub repo URL, and a test API key for the reviewers (create a dedicated key in a test workspace, never a production key, and paste it only into the portal form).
 3. n8n reviews the code and UX; reply to their feedback from the portal. Each later version is re-reviewed after `npm publish`.
 
 ## Server-side note
