@@ -1,6 +1,6 @@
 # n8n-nodes-superbotai
 
-n8n community nodes for [SuperBot AI](https://superbotapp.ai), the AI chatbot for websites and stores.
+Get every chatbot lead and human-handoff request from [SuperBot AI](https://superbotapp.ai) into n8n when it happens, and push leads or new trained answers back. SuperBot AI is the AI chatbot for websites and stores; its free plan covers 200 conversations a month.
 
 - **SuperBot Trigger** starts a workflow when SuperBot captures a lead, a visitor starts a conversation, or a conversation is escalated to a human. It uses webhooks: when the workflow is activated, the node subscribes its webhook URL with SuperBot, and when the workflow is deactivated it removes the subscription. Deliveries are signed (`X-SuperBot-Signature`, HMAC-SHA256 of the raw body), and the node rejects unsigned or forged deliveries by default.
 - **SuperBot** (also usable as an AI-agent tool):
